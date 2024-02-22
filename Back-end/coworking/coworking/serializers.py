@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from .models import UserProfile
+from .models import UserProfile, Space
 
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,6 +15,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['id', 'username', 'email', 'profile']
 
 class CreateUserSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = User
         fields = ['id', 'username', 'email', 'password']
@@ -27,3 +28,10 @@ class CreateUserSerializer(serializers.ModelSerializer):
             password=validated_data['password']
         )
         return user
+
+
+class SpaceSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Space
+        fields = '__all__'
