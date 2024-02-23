@@ -1,12 +1,14 @@
 from django.urls import include, path
 from rest_framework import routers
 
-from .views import UserProfileViewSet, UserViewSet, SpaceViewSet
+from .views import UserProfileViewSet, UserViewSet, SpaceViewSet,ReservationViewSet
 
 router = routers.DefaultRouter()
 router.register(r'user-profiles', UserProfileViewSet)
 router.register(r'users', UserViewSet)
 router.register(r'spaces', SpaceViewSet)
+router.register(r'reservations', ReservationViewSet)
+
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

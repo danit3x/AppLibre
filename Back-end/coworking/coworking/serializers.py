@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from .models import UserProfile, Space
+from .models import UserProfile, Space, Reservation
 
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
@@ -34,4 +34,10 @@ class SpaceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Space
+        fields = '__all__'
+
+class ReservationSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Reservation
         fields = '__all__'

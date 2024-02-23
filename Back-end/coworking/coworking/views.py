@@ -1,7 +1,7 @@
 from rest_framework import viewsets, permissions
 from django.contrib.auth.models import User
-from .models import UserProfile, Space
-from .serializers import UserProfileSerializer, UserSerializer, CreateUserSerializer, SpaceSerializer
+from .models import UserProfile, Space, Reservation
+from .serializers import UserProfileSerializer, UserSerializer, CreateUserSerializer, SpaceSerializer,ReservationSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -34,3 +34,7 @@ class SpaceViewSet(viewsets.ModelViewSet):
 
     # def perform_create(self, serializer):
     #         serializer.save(owner=self.request.user)
+
+class ReservationViewSet(viewsets.ModelViewSet):
+    queryset= Reservation.objects.all()
+    serializer_class= ReservationSerializer

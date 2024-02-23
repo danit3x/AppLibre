@@ -27,7 +27,7 @@ class Space(models.Model):
     def __str__(self):
         return self.name
  
- class Reservation(models.Model):
+class Reservation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario')
     space = models.ForeignKey(Space, on_delete=models.CASCADE, related_name='espacio')
     created_date = models.DateTimeField(auto_now_add=True, editable=False)
@@ -39,3 +39,4 @@ class Space(models.Model):
         ('en espera', 'En espera')
     ]
     status=models.CharField(max_length=15, choices=status_choices, default='en espera')
+    cost = models.FloatField(default=0.0)
