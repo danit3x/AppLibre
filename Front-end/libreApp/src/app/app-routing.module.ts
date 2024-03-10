@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { SpaceComponent } from './pages/space/space.component';
+import { SpacesComponent } from './pages/spaces/spaces.component';
+
+const routes: Routes = [
+  {path: '', component:SpacesComponent},
+  {path: ':id', component:SpaceComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

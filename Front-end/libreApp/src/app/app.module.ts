@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { SpacesComponent } from './pages/spaces/spaces.component';
+import { SpaceComponent } from './pages/space/space.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SpacesComponent } from './pages/spaces/spaces.component';
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    SpacesComponent
+    SpacesComponent,
+    SpaceComponent
   ],
   imports: [
     BrowserModule,
